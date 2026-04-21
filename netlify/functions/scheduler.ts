@@ -1,19 +1,18 @@
+import type { Config } from "@netlify/functions";
 import { runScheduler } from "../../src/core/scheduler";
 
-export const handler = async () => {
-  try {
-    await runScheduler();
+export default async (_req: Request) => {
+  await runScheduler();
 
-    return {
-      statusCode: 200,
-      body: JSON.stringify({ ok: true, message: "Scheduler ran successfully" }),
-    };
-  } catch (error) {
-    console.error("Netlify scheduler failed:", error);
+  return new Response(
+    JSON.stringify({ ok: true, message: "Scheduler ran successfully" }),
+    {
+      status: 200,
+      headers: { "content-type": "application/json" },
+    }
+  );
+};
 
-    return {
-      statusCode: 500,
-      body: JSON.stringify({ ok: false, message: "Scheduler failed" }),
-    };
-  }
+export const config: Config = {
+  schedule: "*/5 * * * *",
 };

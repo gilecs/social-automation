@@ -1,0 +1,15 @@
+{
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/.netlify": true,
+    "**/dist": true,
+    "**/.env": true,
+    "**/.env.*": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/.netlify": true,
+    "**/dist": true
+  },
+  "explorer.excludeGitIgnore": true
+}

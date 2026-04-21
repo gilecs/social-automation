@@ -1,2 +1,29 @@
-# Local Netlify folder
-.netlify
+# dependencies
+node_modules/
+
+# environment / secrets
+.env
+.env.*
+!.env.example
+
+# build output
+dist/
+build/
+coverage/
+
+# netlify local artifacts
+.netlify/
+
+# macOS
+.DS_Store
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# editor
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
